@@ -1,5 +1,5 @@
 <?php
-    $page_title = "Finding Fun in Fredericksburg";
+    $page_title = "Log In";
     include("header.php");
 ?>
     </body>
