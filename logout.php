@@ -2,5 +2,7 @@
     $page_title = "Log Out";
     include("header.php");
 ?>
-    </body>
-</html>
+
+<?php
+    include("footer.php");
+?>

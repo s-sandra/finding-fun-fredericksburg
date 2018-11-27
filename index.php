@@ -2,5 +2,7 @@
     $page_title = "Finding Fun in Fredericksburg";
     include("header.php");
 ?>
-    </body>
-</html>
+
+<?php
+    include("footer.php");
+?>

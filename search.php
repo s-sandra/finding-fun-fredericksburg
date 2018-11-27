@@ -2,5 +2,7 @@
     $page_title = "Search";
     include("header.php");
 ?>
-    </body>
-</html>
+
+<?php
+    include("footer.php");
+?>
