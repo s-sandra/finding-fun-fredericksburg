@@ -21,3 +21,24 @@ CREATE TABLE location_category (
     FOREIGN KEY (category_id)
     REFERENCES category (category_id)
 );
+
+CREATE TABLE security_question (
+    question_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(30)
+);
+
+CREATE TABLE user (
+    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    sec_question_id INT NOT NULL,
+    sec_answer VARCHAR(50) NOT NULL,
+    name VARCHAR(50),
+    username VARCHAR(25) NOT NULL
+    password VARCHAR(128) NOT NULL,
+    CONSTRAINT sec_q_fk
+    FOREIGN KEY sec_question_id
+    REFERENCES security_question (question_id)
+);
+
+CREATE TABLE review (
+    
+);
