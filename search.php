@@ -4,10 +4,10 @@
 ?>
 
 <form method="post" action="search-results.php" id="searchform">
+    <input type="checkbox" name="food" value="food">Food
+    <input type="checkbox" name="entertainment" value="entertainment">Entertainment
+    <input type="checkbox" name="recreation" value="recreation">Recreation<br>
     <input type="text" name="query">
-    <input type="radio" name="food" value="food">Food
-    <input type="radio" name="entertainment" value="entertainment">Entertainment
-    <input type="radio" name="recreation" value="recreation">Recreation
     <input type="submit" name="submit" value="search">
 </form>
 
