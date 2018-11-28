@@ -1,3 +1,5 @@
+--USE TEAM_350_Fall18_Gold
+
 CREATE TABLE location (
     location_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -27,15 +29,15 @@ CREATE TABLE security_question (
     question VARCHAR(30)
 );
 
-CREATE TABLE user (
+CREATE TABLE registered_user (
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     sec_question_id INT NOT NULL,
     sec_answer VARCHAR(50) NOT NULL,
     name VARCHAR(50),
-    username VARCHAR(25) NOT NULL
+    username VARCHAR(25) NOT NULL,
     password VARCHAR(128) NOT NULL,
     CONSTRAINT sec_q_fk
-    FOREIGN KEY sec_question_id
+    FOREIGN KEY (sec_question_id)
     REFERENCES security_question (question_id)
 );
 
@@ -47,9 +49,9 @@ CREATE TABLE review (
     rating INT NOT NULL,
     review VARCHAR(300),
     CONSTRAINT review_loc_id_fk
-    FOREIGN KEY location_id
+    FOREIGN KEY (location_id)
     REFERENCES location (location_id),
     CONSTRAINT review_user_id_fk
-    FOREIGN KEY user_id
-    REFERENCES user (user_id)
+    FOREIGN KEY (user_id)
+    REFERENCES registered_user (user_id)
 );
