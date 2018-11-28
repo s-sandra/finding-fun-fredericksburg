@@ -40,5 +40,16 @@ CREATE TABLE user (
 );
 
 CREATE TABLE review (
-    
+    review_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    location_id INT NOT NULL,
+    user_id INT NOT NULL,
+    date DATE NOT NULL,
+    rating INT NOT NULL,
+    review VARCHAR(300),
+    CONSTRAINT review_loc_id_fk
+    FOREIGN KEY location_id
+    REFERENCES location (location_id),
+    CONSTRAINT review_user_id_fk
+    FOREIGN KEY user_id
+    REFERENCES user (user_id)
 );
