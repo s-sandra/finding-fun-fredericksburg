@@ -55,3 +55,21 @@ CREATE TABLE review (
     FOREIGN KEY (user_id)
     REFERENCES registered_user (user_id)
 );
+
+INSERT INTO category (name) VALUES ("food");
+INSERT INTO category (name) VALUES ("entertainment");
+INSERT INTO category (name) VALUES ("recreation");
+INSERT INTO category (name) VALUES ("attractions");
+INSERT INTO category (name) VALUES ("shopping");
+
+INSERT INTO security_question (question) VALUES ("What is your favorite song?");
+
+INSERT INTO location (name, street_address, zip_code) VALUES ("Joey's Pizza Parlor", "102 Smith Lane", "22445");
+
+INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Happy Birthday", "Lily James", "ljames", "c31v3rp455w0rd");
+INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Feliz Navidad", "Bob Smith", "bobby", "12345");
+INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Yellow Submarine", "Joe Schmo", "cupojoe", "45678");
+
+INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 1, "2/2/18", 5);
+INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 2, "8/19/18", 1);
+INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 3, "8/17/18", 3);
