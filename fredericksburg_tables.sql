@@ -62,9 +62,11 @@ INSERT INTO category (name) VALUES ("recreation");
 INSERT INTO category (name) VALUES ("attractions");
 INSERT INTO category (name) VALUES ("shopping");
 
+INSERT INTO location (name, street_address, zip_code) VALUES ("Joey's Pizza Parlor", "102 Smith Lane", "22445");
+INSERT INTO location_category (location_id, category_id) VALUES (1,1);
+
 INSERT INTO security_question (question) VALUES ("What is your favorite song?");
 
-INSERT INTO location (name, street_address, zip_code) VALUES ("Joey's Pizza Parlor", "102 Smith Lane", "22445");
 
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Happy Birthday", "Lily James", "ljames", "c31v3rp455w0rd");
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Feliz Navidad", "Bob Smith", "bobby", "12345");
