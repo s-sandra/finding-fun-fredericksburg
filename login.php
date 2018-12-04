@@ -55,9 +55,8 @@ if(!empty( $_POST)){
         if(password_verify($_POST['password'], $usern->password)){
             $_SESSION['user_id']=$USER->ID;
         }
-        }
-
     }
+
 }
 ?>
 
