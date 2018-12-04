@@ -4,7 +4,8 @@ CREATE TABLE location (
     location_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     street_address VARCHAR(100) NOT NULL,
-    zip_code VARCHAR(5) NOT NULL
+    zip_code VARCHAR(5) NOT NULL,
+    description VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE category (
@@ -62,7 +63,7 @@ INSERT INTO category (name) VALUES ("recreation");
 INSERT INTO category (name) VALUES ("attractions");
 INSERT INTO category (name) VALUES ("shopping");
 
-INSERT INTO location (name, street_address, zip_code) VALUES ("Joey's Pizza Parlor", "102 Smith Lane", "22445");
+INSERT INTO location (name, street_address, zip_code, description) VALUES ("Joey's Pizza Parlor", "102 Smith Lane", "22445", "A pizza parlor that serves pizza and italian subs.");
 INSERT INTO location_category (location_id, category_id) VALUES (1,1);
 
 INSERT INTO security_question (question) VALUES ("What is your favorite song?");
@@ -72,6 +73,6 @@ INSERT INTO registered_user (sec_question_id, sec_answer, name, username, passwo
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Feliz Navidad", "Bob Smith", "bobby", "12345");
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Yellow Submarine", "Joe Schmo", "cupojoe", "45678");
 
-INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 1, "2/2/18", 5);
-INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 2, "8/19/18", 1);
-INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 3, "8/17/18", 3);
+INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 1, "18/2/2", 5);
+INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 2, "18/1/19", 1);
+INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 3, "18/1/17", 3);
