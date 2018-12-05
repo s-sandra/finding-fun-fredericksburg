@@ -14,7 +14,7 @@
     <ul>
         <li><a href="search.php">search</a></li>
         <?php 
-        if($_SESSION["LoggedIn"]){
+        if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"]){
             echo "<li><a href='account.php'>account</a></li>
             <li><a href='logout.php'>log out</a></li>";
         }

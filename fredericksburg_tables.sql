@@ -65,7 +65,8 @@ INSERT INTO category (name) VALUES ("shopping");
 
 INSERT INTO location (name, street_address, zip_code, description) VALUES ("Joey's Pizza Parlor", "102 Smith Lane", "22445", "A pizza parlor that serves pizza and italian subs.");
 INSERT INTO location (name, street_address, zip_code, description) VALUES ("Bob's Grill", "48 Tyson Road", "22446", "A gourmet restaurant that serves burgers, steaks, fries and beer.");
-INSERT INTO location_category (location_id, category_id) VALUES (1,1);
+INSERT INTO location_category (location_id, category_id) VALUES ((SELECT location_id FROM location WHERE name = "Joey's Pizza Parlor"),
+                                                                SELECT category_id FROM category WHERE name = "food"));
 INSERT INTO location_category (location_id, category_id) VALUES ((SELECT location_id FROM location WHERE name = "Bob's Grill"),
                                                                 (SELECT category_id FROM category WHERE name = "food"));
 
@@ -76,9 +77,13 @@ INSERT INTO registered_user (sec_question_id, sec_answer, name, username, passwo
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Feliz Navidad", "Bob Smith", "bobby", "12345");
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Yellow Submarine", "Joe Schmo", "cupojoe", "45678");
 
-INSERT INTO review (location_id, user_id, date, rating, review) VALUES (1, 1, "18/2/2", 5);
-INSERT INTO review (location_id, user_id, date, rating, review) VALUES (1, 2, "18/1/19", 1);
-INSERT INTO review (location_id, user_id, date, rating) VALUES (1, 3, "18/1/17", 3);
+INSERT INTO review (location_id, user_id, date, rating, review) VALUES ((SELECT location_id FROM location WHERE name = "Joey's Pizza Parlor"), 
+                                                                        (SELECT user_id FROM registered_user WHERE username = "ljames"), 
+                                                                        "18/2/2", 5);
+INSERT INTO review (location_id, user_id, date, rating, review) VALUES ((SELECT location_id FROM location WHERE name = "Joey's Pizza Parlor"), 
+                                                                        (SELECT user_id FROM registered_user WHERE username = "bobby"), 
+                                                                        "18/1/19", 1);
+INSERT INTO review (location_id, user_id, date, rating) VALUES ((SELECT location_id FROM location WHERE name = "Joey's Pizza Parlor"), 3, "18/1/17", 3);
 INSERT INTO review (location_id, user_id, date, rating, review) VALUES ((SELECT location_id FROM location WHERE name = "Bob's Grill"), 
                                                                 (SELECT user_id FROM registered_user WHERE username = "ljames"), "18/12/2", 5,
                                                                 "Delicious steaks for a great price! Highly recommend!");

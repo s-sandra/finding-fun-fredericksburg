@@ -36,14 +36,13 @@
 if(!empty( $_POST)){
     if(isset($_POST['username']) && isset($_POST['password'])){
         include("credentials.php");
-        include("connection.php");
         
         //username and password global variables
         $user = $_POST['username'];
         $pass = $_POST['password'];
 
         //connection to database
-        $conn = new mysql_connect($host, $username, $password, $dbname);
+        include("connection.php");
         $stmt = $connection->prepare("SELECT * FROM registered_user WHERE usernam = '$user'");
         $stmt->execute();
         $result = $stmt->get_result();
@@ -51,6 +50,7 @@ if(!empty( $_POST)){
         //verify the password
         if(password_verify($_POST['password'], $usern->password)){
             $_SESSION['user_id']=$USER->ID;
+            $_SESSION['LoggedIn'] = True;
         }
     }
 
