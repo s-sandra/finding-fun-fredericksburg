@@ -83,7 +83,7 @@
 			while ($row = mysqli_fetch_assoc($result)) {
 
                 if (!empty($row['name'])){ // checks if result returned any locations.
-                    echo "<li>" . $row['name'] . " | Average rating: " . $row['avg'] . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
+                    echo "<li><b>" . $row['name'] . "</b> | Average rating: " . $row['avg'] . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
                     if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"]){
                         echo "<a href='rate.php'>rate</a>"; // links to rate form if user is logged in.
                     }
