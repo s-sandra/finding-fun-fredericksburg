@@ -32,8 +32,7 @@
     </form>
 
 <?php
-//start the session
-session_start();
+
 if(!empty( $_POST)){
     if(isset($_POST['username']) && isset($_POST['password'])){
         include("credentials.php");
@@ -53,9 +52,8 @@ if(!empty( $_POST)){
         if(password_verify($_POST['password'], $usern->password)){
             $_SESSION['user_id']=$USER->ID;
         }
-        }
-
     }
+
 }
 ?>
 

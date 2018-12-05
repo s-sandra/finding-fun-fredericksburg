@@ -30,7 +30,7 @@
                      $categories = $categories . ", ";
                 }
             }
-            $categories = $categories . ");";
+            $categories = $categories . ")";
         }
     
         $sql_select = "";
@@ -40,18 +40,21 @@
         if(!empty($search) || !empty($categories) ){
 
             if (!empty($search)){
-                $sql_select = "SELECT loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip FROM location AS loc 
-                                NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat
-                                ON loc_cat.category_id = cat.category_id WHERE loc.name LIKE ? OR loc.description LIKE ?";
+                $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip FROM location AS loc 
+                                NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat ON loc_cat.category_id = cat.category_id 
+                                INNER JOIN review as rev ON loc.location_id = rev.location_id
+                                WHERE loc.name LIKE ? OR loc.description LIKE ? ORDER BY avg DESC";
                 
                 if (!empty($categories)){
                     $sql_select = $sql_select . " AND " . $categories;
                 }
             }
             else {
-                $sql_select = "SELECT loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip, cat.name AS category 
+                $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip, cat.name AS category 
                             FROM location AS loc NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat
-                            ON loc_cat.category_id = cat.category_id WHERE " . $categories;
+                            ON loc_cat.category_id = cat.category_id 
+                            INNER JOIN review as rev ON loc.location_id = rev.location_id
+                            WHERE " . $categories . " ORDER BY avg DESC";
             }
 
         }
@@ -80,12 +83,8 @@
 
 			// Prints out search results as unordered list items.
 			while ($row = mysqli_fetch_assoc($result)) {
-                $avg_query = "SELECT AVG(rating) AS avg FROM review NATURAL JOIN location GROUP BY location_id";
-                $avg_result = mysqli_query($connection, $avg_query);
-                $avg_row = mysqli_fetch_assoc($avg_result);
-                $avg = $avg_row['avg'];
 
-                echo "<li>" . $row['name'] . " | Average rating: " . $avg . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
+                echo "<li>" . $row['name'] . " | Average rating: " . $row['avg'] . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
                 if($_SESSION["LoggedIn"]){
                     echo "<a href='rate.php'>rate</a>"; // links to rate form if user is logged in.
                 }
