@@ -40,10 +40,10 @@
         if(!empty($search) || !empty($categories) ){
 
             if (!empty($search)){
-                $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip FROM location AS loc 
-                                NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat ON loc_cat.category_id = cat.category_id 
+                $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip 
+                                FROM location AS loc NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat ON loc_cat.category_id = cat.category_id 
                                 INNER JOIN review as rev ON loc.location_id = rev.location_id
-                                WHERE loc.name LIKE ? OR loc.description LIKE ? ORDER BY avg DESC";
+                                WHERE loc.name LIKE ? OR loc.description LIKE ? GROUP BY rev.location_id ORDER BY avg DESC";
                 
                 if (!empty($categories)){
                     $sql_select = $sql_select . " AND " . $categories;
@@ -54,7 +54,7 @@
                             FROM location AS loc NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat
                             ON loc_cat.category_id = cat.category_id 
                             INNER JOIN review as rev ON loc.location_id = rev.location_id
-                            WHERE " . $categories . " ORDER BY avg DESC";
+                            WHERE " . $categories . " GROUP BY rev.location_id ORDER BY avg DESC";
             }
 
         }
@@ -84,11 +84,13 @@
 			// Prints out search results as unordered list items.
 			while ($row = mysqli_fetch_assoc($result)) {
 
-                echo "<li>" . $row['name'] . " | Average rating: " . $row['avg'] . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
-                if($_SESSION["LoggedIn"]){
-                    echo "<a href='rate.php'>rate</a>"; // links to rate form if user is logged in.
+                if (!empty($row['name'])){ // checks if result returned any locations.
+                    echo "<li>" . $row['name'] . " | Average rating: " . $row['avg'] . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
+                    if($_SESSION["LoggedIn"]){
+                        echo "<a href='rate.php'>rate</a>"; // links to rate form if user is logged in.
+                    }
+                    echo "<a href=reviews.php?id=" . $row['id'] . ">see reviews</a></li>"; // links to reviews for that search result.
                 }
-                echo "<a href=reviews.php?id=" . $row['id'] . ">see reviews</a>"; // links to reviews for that search result.
             }
                 
             echo "</ul>";
