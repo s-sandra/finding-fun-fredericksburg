@@ -4,7 +4,7 @@
 <title></title>
 </head>
 
-<body bgcolor="lightblue">
+<body>
 
 <?php
     $page_title = "Log In";
@@ -13,12 +13,17 @@
 
 
     <form action="login.php" method"post">
-    <table border="2" align="center" bgcolor="white">
+    <table border="2" align="center">
     <tr>
     <td colspan="2" align="center">LOGIN</td>
     </tr>
 
     
+
+    <tr>
+    <td>Username:</td>
+    <td><input type="username" name="username"></td>
+    </tr>
 
     <tr>
     <td>Password:</td>
@@ -30,7 +35,7 @@
     </tr>
 
     <tr>
-    <td colspan="2" align="center"><A HREF="register.php">REGISTER HERE</A></td>
+    <td colspan="2" align="center">Not a member? <A HREF="register.php">Register here.</A></td>
     </tr>
 
     </table>
@@ -48,7 +53,7 @@ if(!empty( $_POST)){
 
         //connection to database
         include("connection.php");
-        $stmt = $connection->prepare("SELECT * FROM registered_user WHERE usernam = '$user'");
+        $stmt = $connection->prepare("SELECT * FROM registered_user WHERE username = '$user'");
         $stmt->execute();
         $result = $stmt->get_result();
             $usern = $result->fetch_object();
