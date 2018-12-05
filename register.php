@@ -34,8 +34,8 @@
   
 <tr>
 <td>Choose a security question:</td>
-<td><input type = "radio" name = "secquestion1">What is your favorite song?</td>
-<td><input type = "radio" name = "secquestion2">Where were you born?</td> <!---- users choose security questions from list of security questions in security_question table.--->
+<td><input type = "radio" name = "secquestion1">What is your favorite song?<br>
+<input type = "radio" name = "secquestion2">Where were you born?</td> <!---- users choose security questions from list of security questions in security_question table.--->
 </tr>
   
 <tr>
