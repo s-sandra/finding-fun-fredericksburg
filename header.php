@@ -6,11 +6,12 @@
         <meta lang="en-US">
         <meta name="author" content="Team Gold">
         <!--<meta name="description" content=".">-->
-        <!--<link rel="stylesheet" href="./styles.css">-->
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <?php session_start(); ?>
 
     <body>
+    <div class="header">
     <ul>
         <li><a href="search.php">search</a></li>
         <?php 
@@ -22,3 +23,4 @@
             echo "<li><a href='login.php'>log in</a></li>";
         }?>
     </ul>
+    </div>
