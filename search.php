@@ -47,7 +47,7 @@
                     $sql_select = $sql_select . " AND " . $categories;
                 }
 
-                $sql_select = $sql_select . "GROUP BY rev.location_id ORDER BY avg DESC";
+                $sql_select = $sql_select . " GROUP BY rev.location_id ORDER BY avg DESC";
             }
             else {
                 $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip, cat.name AS category 
