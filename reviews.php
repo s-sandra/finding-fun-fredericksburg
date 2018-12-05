@@ -13,7 +13,7 @@
 
         $sql_select = "SELECT loc.name AS name, loc.street_address AS address, loc.zip_code AS zip, rev.date AS date, rev.rating AS rating, rev.review AS review, user.username AS username 
                         FROM location AS loc NATURAL JOIN review AS rev INNER JOIN registered_user AS user ON user.user_id = rev.user_id
-                        WHERE loc.location_id = " . $location_id;
+                        WHERE loc.location_id = " . $location_id . " ORDER BY date DESC";
         
         $result = mysqli_query($connection, $sql_select);
 

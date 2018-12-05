@@ -1,4 +1,4 @@
---USE TEAM_350_Fall18_Gold
+--USE Team_350_Fall18_Gold
 
 CREATE TABLE location (
     location_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
