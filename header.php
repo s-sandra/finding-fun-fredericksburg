@@ -13,6 +13,7 @@
     <body>
     <div class="header">
     <ul>
+        <li><a href="index.php">Finding Fun in Fredericksburg</a></li>
         <li><a href="search.php">search</a></li>
         <?php 
         if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"]){
@@ -24,3 +25,4 @@
         }?>
     </ul>
     </div>
+    <div class="content">
