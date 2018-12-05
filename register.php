@@ -33,8 +33,8 @@
 </tr>
   
 <tr>
-<td>Security Question:</td>
-<td><input type = "text" name = "secquestion"></td>
+<td>Choose a security question:</td>
+<td><input type = "radio" name = "secquestion1">What is your favorite song?</td> <!---- users choose security questions from list of security questions in security_question table.--->
 </tr>
   
 <tr>
