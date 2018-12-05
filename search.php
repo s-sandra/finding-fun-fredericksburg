@@ -6,8 +6,6 @@
 <form method="post" action="search.php?results" id="searchform">
     <input type="checkbox" name="category_list[]" value="food"><label>Food</label>
     <input type="checkbox" name="category_list[]" value="entertainment"><label>Entertainment</label>
-    <input type="checkbox" name="category_list[]" value="recreation"><label>Recreation</label><br>
-    <input type="checkbox" name="category_list[]" value="attractions"><label>Attractions</label><br>
     <input type="checkbox" name="category_list[]" value="shopping"><label>Shopping</label><br>
     <input type="text" name="query">
     <input type="submit" name="submit" value="search">
