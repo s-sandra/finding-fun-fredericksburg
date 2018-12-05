@@ -80,7 +80,12 @@
 
 			// Prints out search results as unordered list items.
 			while ($row = mysqli_fetch_assoc($result)) {
-                echo "<li>" . $row['name'] . " | Average rating: <br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
+                $avg_query = "SELECT AVG(rating) AS avg FROM review NATURAL JOIN location GROUP BY location_id";
+                $avg_result = mysqli_query($connection, $avg_query);
+                $avg_row = mysqli_fetch_assoc($avg_result);
+                $avg = $avg_row['avg'];
+
+                echo "<li>" . $row['name'] . " | Average rating: " . $avg . " stars<br>" . $row['address'] . " Fredericksburg, VA, " . $row['zip'] . "<br>" . $row['description'] . "</li>\n";
                 if($_SESSION["LoggedIn"]){
                     echo "<a href='rate.php'>rate</a>"; // links to rate form if user is logged in.
                 }
