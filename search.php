@@ -41,11 +41,13 @@
                 $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip 
                                 FROM location AS loc NATURAL JOIN location_category AS loc_cat INNER JOIN category AS cat ON loc_cat.category_id = cat.category_id 
                                 INNER JOIN review as rev ON loc.location_id = rev.location_id
-                                WHERE loc.name LIKE ? OR loc.description LIKE ? GROUP BY rev.location_id ORDER BY avg DESC";
+                                WHERE loc.name LIKE ? OR loc.description LIKE ?";
                 
                 if (!empty($categories)){
                     $sql_select = $sql_select . " AND " . $categories;
                 }
+
+                $sql_select = $sql_select . "GROUP BY rev.location_id ORDER BY avg DESC";
             }
             else {
                 $sql_select = "SELECT ROUND(AVG(rev.rating)) AS avg, loc.location_id AS id, loc.description AS description, loc.name AS name, loc.street_address AS address, loc.zip_code AS zip, cat.name AS category 
