@@ -71,6 +71,7 @@ INSERT INTO location_category (location_id, category_id) VALUES ((SELECT locatio
                                                                 (SELECT category_id FROM category WHERE name = "food"));
 
 INSERT INTO security_question (question) VALUES ("What is your favorite song?");
+INSERT INTO security_question (question) VALUES ("Where were you born?");
 
 
 INSERT INTO registered_user (sec_question_id, sec_answer, name, username, password) VALUES (1, "Happy Birthday", "Lily James", "ljames", "c31v3rp455w0rd");
