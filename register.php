@@ -4,7 +4,7 @@
 <title></title>
 </head>
 
-<body bgcolor=lightblue">
+<body>
 
 <?php
     $page_title = "Log In";
@@ -12,7 +12,7 @@
 ?>
 
 <form action="register.php" method"post">
-  <table border="2" align="center" bgcolor="white">
+  <table border="2" align="center">
 <tr>
 <td colspan="2" alight="center">REGISTER</td>
 </tr>

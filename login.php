@@ -30,7 +30,7 @@
     </tr>
 
     <tr>
-    <td colspan="2" align="center"><A HREF="finding-fun-fredericksburg/register.php">REGISTER HERE</A></td>
+    <td colspan="2" align="center"><A HREF="register.php">REGISTER HERE</A></td>
     </tr>
 
     </table>
