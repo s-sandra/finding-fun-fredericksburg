@@ -56,3 +56,6 @@ include "connection.php";
 <?php
 include("footer.php");
 ?>
+
+</body>
+</html>

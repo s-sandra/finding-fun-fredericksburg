@@ -28,6 +28,11 @@
     <tr>
     <td colspan="2" align="center"><input type="submit" name="submit" value="Submit"></td>
     </tr>
+
+    <tr>
+    <td colspan="2" align="center"><A HREF="finding-fun-fredericksburg/register.php">REGISTER HERE</A></td>
+    </tr>
+
     </table>
     </form>
 
