@@ -94,6 +94,7 @@
             }
                 
             echo "</ul>";
+            mysqli_close($connection);
         }
         else {
             echo "<p>Please enter a search phrase or choose a category.</p>";

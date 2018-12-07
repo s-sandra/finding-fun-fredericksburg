@@ -56,6 +56,7 @@
                 
             }
             echo "</ul>";
+            mysqli_close($connection);
         }
     }
 ?>
