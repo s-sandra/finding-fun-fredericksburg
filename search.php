@@ -3,7 +3,7 @@
     include("header.php");
 ?>
 
-<form method="post" action="search.php?results" id="searchform">
+<form method="post" id="searchform">
     <input type="checkbox" name="category_list[]" value="food"><label>Food</label>
     <input type="checkbox" name="category_list[]" value="entertainment"><label>Entertainment</label>
     <input type="checkbox" name="category_list[]" value="shopping"><label>Shopping</label><br>
@@ -12,8 +12,8 @@
 </form>
 
 <?php
-    // checks to see if user hit submit and passed results as get super global.
-    if(isset($_GET['results'])){
+    // checks to see if user hit submit.
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $categories = "";
     
