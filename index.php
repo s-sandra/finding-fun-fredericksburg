@@ -10,7 +10,7 @@
         The City of Fredericksburg has plenty of fun things to do! There are business, parks,
         and trails that are all visited by locals and visitors alike.
         
-        <a href="http://cs.umw.edu/~swills/finding-fun-fredericksburg/search.php"> Click here to search Entertainment </a>
+        <a href="search.php"> Click here to search Entertainment </a>
 
     </p>
 
@@ -19,7 +19,7 @@
         There are so many wonderful places to eat with different tastes and cultures in this fine 
         city that you can experience through food.
         
-        <a href="http://cs.umw.edu/~swills/finding-fun-fredericksburg/search.php"> Click here to search food </a>
+        <a href="search.php"> Click here to search food </a>
 
     </p>
 
@@ -28,7 +28,7 @@
         Fredericksburg has a variety of different shops and shopping opportunities like the Farmer's market 
         that we can inform you about through reviews and descriptions.
         
-        <a href="http://cs.umw.edu/~swills/finding-fun-fredericksburg/search.php"> Click here to search Shopping </a>
+        <a href="search.php"> Click here to search Shopping </a>
 
     </p>
 
