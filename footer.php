@@ -1,5 +1,8 @@
 <!DOCTYPE HTML>
 
-    <p>Finding Fun in Fredericksburg. Team Gold.</p>
-    </body>
+</div>
+    <div class="footer">
+        <p>Finding Fun in Fredericksburg. Team Gold.</p>
+    </div>
+</body>
 </html>
