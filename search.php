@@ -2,7 +2,7 @@
     $page_title = "Search";
     include("header.php");
 ?>
-
+<br>
 <form method="post" id="searchform">
     <input type="checkbox" name="category_list[]" value="food"><label>Food</label>
     <input type="checkbox" name="category_list[]" value="entertainment"><label>Entertainment</label>
