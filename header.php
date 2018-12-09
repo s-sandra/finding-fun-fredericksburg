@@ -15,6 +15,7 @@
     <ul>
         <li><a href="index.php">Finding Fun in Fredericksburg</a></li>
         <li><a href="search.php">search</a></li>
+        <li><a href="about.php">about</a></li>
         <?php 
         if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"]){
             echo "<li><a href='account.php'>account</a></li>
