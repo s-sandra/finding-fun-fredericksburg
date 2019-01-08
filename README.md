@@ -3,7 +3,7 @@ Created by Sandra Shtabnaya, Sabine Wills and Jess Thomas
 
 ## Interface Description
 
-Finding Fun in Fredericksburg is a travel website devoted to providing tourists and residents with information about various locations to visit in the Fredericksburg area. It allows all users to search for destinations according to category(ies) (entertainment, food and shopping), and examine the address, average rating and individual reviews of each search result.
+Finding Fun in Fredericksburg is a travel website devoted to providing tourists and residents with information about various locations to visit in the Fredericksburg, Virginia area. It allows all users to search for destinations according to category(ies) (entertainment, food and shopping), and examine the address, average rating and individual reviews of each search result.
 
 
 ### Food
@@ -36,3 +36,36 @@ Guests cannot edit their own reviews and ratings. They cannot update existing de
 
 ##### Delete
 Guest users cannot delete their own reviews. They cannot delete locations or other reviews within the website.
+
+### Registered Users
+
+In addition to searching our database for the reviews, ratings and addresses of stored locations, logged-in users have permission to do the following.
+
+#### Create
+Registered users can only rate and/or write new reviews for an already existing location. They can suggest new locations that the admin can add to the database. If registered users find errors within the database, they can report those errors to the admin. However, they cannot add new locations to the website.
+
+#### Read
+Registered users can view the names, addresses and reviews of all destinations in the database. They can also view a list of their own reviews. However, they cannot read the suggestions of all users.
+
+#### Update
+Registered users can only edit their own reviews and ratings. They cannot update existing destinations in the website.
+
+#### Delete
+Registered users can only delete their own reviews. They cannot delete locations or other reviews within the website.
+
+### Administrators
+
+In addition to viewing locations in the database, website admins have the following capabilities.
+
+#### Create
+Admins are able to add new entries to the database. This can be recently opened locations or simply places suggested by other users that have not yet been added to the website. Admins are unable to create reports or suggestions, but they can write reviews.
+
+#### Read
+Admins can read the names, addresses and reviews of all destinations in the database. They can view all user suggestions for new locations.
+
+#### Update
+If admins find errors within the database, they can edit the erroneous fields. Just like registered users, they can edit their own reviews and ratings.
+
+#### Delete
+Admins can delete user suggestions, offensive reviews or invalid destinations, such as locations that have gone out of business.
+
