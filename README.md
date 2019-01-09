@@ -1,5 +1,6 @@
 # Finding Fun in Fredericksburg
-Created by Sandra Shtabnaya, Sabine Wills and Jess Thomas
+Created by Sandra Shtabnaya, Sabine Wills and Jess Thomas.
+The final product can be viewed at http://cs.umw.edu/~ashtabna/finding-fun-fredericksburg/.
 
 ## Interface Description
 
