@@ -35,7 +35,7 @@ Guests can view the names, addresses and reviews of all destinations in the data
 #### Update
 Guests cannot edit their own reviews and ratings. They cannot update existing destinations in the website.
 
-##### Delete
+#### Delete
 Guest users cannot delete their own reviews. They cannot delete locations or other reviews within the website.
 
 ### Registered Users
