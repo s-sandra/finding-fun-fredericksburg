@@ -1,6 +1,6 @@
 # Finding Fun in Fredericksburg
 Created by Sandra Shtabnaya, Sabine Wills and Jess Thomas.
-The final product is no available online.
+The final product is no longer available online.
 
 ## Interface Description
 
